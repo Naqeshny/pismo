@@ -204,7 +204,9 @@ module Pismo
                   '.post-body',
                   '.entry-content',
                   '.document_description_short p',    # Scribd
-                  '.single-post p'
+                  '.single-post p',
+                  '//p[string-length()>40]',
+                  '//div[string-length()>40]'
                   ], all)
 
       # TODO: Improve sentence extraction - this is dire even if it "works for now"
