@@ -181,6 +181,13 @@ module Pismo
     # Returns the "lede(s)" or first paragraph(s) of the story/page
     def lede(all = false)
       lede = @doc.match([ 
+                  '#newsStoryTxt p', # Youm7
+                  '.focusParagraph p', # Reuters
+                  '//div[@class="bodycontent"]//p[string-length()>40]', # Yallakora
+                  '//div[@id="content"]//p[string-length()>40]', # Masrawy
+                  '//div[@id="article_content"][string-length()>40]', # Goal.com
+                  '#blq-content .bodytext > p', #BBC Arabic
+                  '//div[@class="storyText"][string-length()>40]', #CBS
                   '.post-text p',
                   '#blogpost p',
                   '.story-teaser',
