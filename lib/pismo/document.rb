@@ -28,7 +28,10 @@ module Pismo
       @url = handle if handle =~ /\Ahttp/i
       
       @html = if handle =~ /\Ahttp/i
-                open(handle).read
+                http = Net::HTTP::Persistent.new 'pismo'
+                http.idle_timeout = 5
+                http.keep_alive   = 300
+                http.request(handle).read_body
               elsif handle.is_a?(StringIO) || handle.is_a?(IO) || handle.is_a?(Tempfile)
                 handle.read
               else

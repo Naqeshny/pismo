@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency(%q<shoulda>, [">= 0"])
   s.add_dependency(%q<awesome_print>, [">= 0"])
   s.add_dependency(%q<nokogiri>, [">= 0"])
+  s.add_dependency(%q<net-http-persistent>, [">= 2.5.2", "~> 2.5"])
   s.add_dependency(%q<sanitize>, [">= 0"])
   s.add_dependency(%q<fast-stemmer>, [">= 0"])
   s.add_dependency(%q<chronic>, [">= 0"])
